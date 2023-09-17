@@ -198,7 +198,7 @@ else
 fi
 
 # // SSH Websocket Proxy
-xray=$(/etc/init.d/ssh status | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
+xray=$(systemctl status xray | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 if [[ $xray == "running" ]]; then
     status_xray="${GREEN}ON${NC}"
 else

@@ -239,7 +239,7 @@ case $opt in
 06 | 6) clear ; restart ;;
 07 | 7) clear ; autoboot ;;
 08 | 8) clear ; mspeed ;;
-08 | 9) clear ; mspeed2 ;;
+09 | 9) clear ; mspeed2 ;;
 00 | 0) clear ; menu ;;
 *) clear ; menu-set ;;
 esac

@@ -1,5 +1,5 @@
 #!/bin/bash
-MYIP=$(wget -qO- ipinfo.io/ip);
+MYIP=$(wget -qO- ipinfo.io/ip)
 
 colornow=$(cat /etc/ssnvpn/theme/color.conf)
 NC="\e[0m"
@@ -472,7 +472,7 @@ echo -e ""
 read -n 1 -s -r -p "   Press any key to back on menu"
 menu-ip  
 }
-Isadmin=$(curl -sS https://raw.githubusercontent.com/MyRidwan/rizz-code/main/ip | grep $MYIP | awk '{print $5}')
+Isadmin=$(curl -sS https://raw.githubusercontent.com/rizz-code/allow/main/ip | grep $MYIP | awk '{print $5}')
 if [ "$Isadmin" = "OFF" ]; then
 clear
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
@@ -480,8 +480,8 @@ echo -e "$COLOR1│${NC} ${COLBG1}            • PREMIUM USER ONLY •         
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 echo -e "$COLOR1│${NC} [INFO] Only PRO Users Can Use This Panel"
-echo -e "$COLOR1│${NC} [INFO] Buy Premium Membership : "
-echo -e "$COLOR1│${NC} [INFO] PM : "
+echo -e "$COLOR1│${NC} [INFO] Buy Super Premium Membership "
+echo -e "$COLOR1│${NC} [INFO] PM : @Akusiapaoiii "
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
 echo -e "$COLOR1│${NC}                 • RizzVPN •                 $COLOR1│$NC"

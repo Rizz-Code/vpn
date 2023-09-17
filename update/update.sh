@@ -38,8 +38,7 @@ fi
 function haconf(){
 echo -e "Seting conf haproxy"
 rm -fr /etc/haproxy/haproxy.cfg
-cat /etc/xray/xray.crt /etc/xray/xray.key | tee /etc/haproxy/hap.pem
-cat >/etc/haproxy/haproxy.cfg <<HAH
+cat >/etc/haproxy/haproxy.cfg <<EOF
 global
     daemon
     maxconn 256
@@ -66,7 +65,8 @@ backend nginx-backend
     mode http
     option httplog
     server nginx-server 127.0.0.1:80
-HAH
+EOF
+cat /etc/xray/xray.crt /etc/xray/xray.key | tee /etc/haproxy/hap.pem
 systemctl restart haproxy
 echo -e "DONE"
 clear
@@ -88,6 +88,7 @@ fi
 }
 
 echo -e " [INFO] System Update"
+sudo apt-get install at > /dev/null 2>&1
 sleep 2
 haproxycek
 echo -e " [INFO] Downloading Update File"
@@ -117,6 +118,7 @@ wget -q -O /usr/bin/limitqouta "https://raw.githubusercontent.com/rizz-code/vpn/
 wget -q -O /usr/bin/bdsm "https://raw.githubusercontent.com/rizz-code/vpn/main/update/bdsm.sh" && chmod +x /usr/bin/bdsm
 wget -q -O /usr/bin/xp "https://raw.githubusercontent.com/rizz-code/vpn/main/update/xp.sh" && chmod +x /usr/bin/xp
 wget -q -O /usr/bin/limiter "https://raw.githubusercontent.com/rizz-code/vpn/main/update/limiter.sh" && chmod +x /usr/bin/limiter
+wget -q -O /usr/bin/resvm "https://raw.githubusercontent.com/rizz-code/vpn/main/update/resvm.sh" && chmod +x /usr/bin/resvm
 wget -q -O /home/ver "https://raw.githubusercontent.com/rizz-code/vpn/main/version"
 
 
@@ -137,13 +139,13 @@ EOF
 cat >/etc/cron.d/limmiter <<-END
 	SHELL=/bin/sh
 	PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
-	*/10 * * * * root /usr/bin/limiter
+	* * * * * root /usr/bin/limiter
 END
 
 cat >/etc/cron.d/xp_all <<-END
 	SHELL=/bin/sh
 	PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
-	2 0 * * * root /usr/bin/xp
+	* * * * * root /usr/bin/xp
 END
 
 systemctl enable limitqouta@vmess

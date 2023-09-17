@@ -1,5 +1,7 @@
 #!/bin/bash
 
+clear
+clear
 echo "Welcome in System Installer" | lolcat -a -d 100
 echo -ne "[ WARNING ] Lanjutkan installasi sekarang ? (y/n)? " | lolcat
 read answer

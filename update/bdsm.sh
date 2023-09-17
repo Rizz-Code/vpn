@@ -67,18 +67,16 @@ if [[ ${split} != "" ]]; then
 	     systemctl restart xray &> /dev/null
          cum=$(cat /tmp/iplim | grep -w "${user}" | cut -d ' ' -f 2,3)
          
-         TIME="10"
-         URL="https://api.telegram.org/bot$BOT_TOKEN/sendMessage"
          TEXT="
-<code>————————————————————————————————————</code>
-<code>               VMESS</code>
-<code>————————————————————————————————————</code>
-<code>     ❌ Multi Login Detected ❌</code>
-<code>————————————————————————————————————</code>
+<code>—————————————————————————</code>
+<code>         VMESS            </code>
+<code>—————————————————————————</code>
+<code>❌ Multi Login Detected ❌</code>
+<code>—————————————————————————</code>
 <code>IP     : ${MYIP}
 DOMAIN : ${domain}
 </code>
-<code>————————————————————————————————————</code>
+<code>—————————————————————————</code>
 <code>Username : ${user}</code>
 ${cum}
 
@@ -133,18 +131,16 @@ if [[ ${split} != "" ]]; then
 	     systemctl restart xray &> /dev/null
          cum=$(cat /tmp/iplimless | grep -w "${user}" | cut -d ' ' -f 2,3)
          
-         TIME="10"
-         URL="https://api.telegram.org/bot$BOT_TOKEN/sendMessage"
          TEXT="
-<code>————————————————————————————————————</code>
-<code>               vless</code>
-<code>————————————————————————————————————</code>
-<code>     ❌ Multi Login Detected ❌</code>
-<code>————————————————————————————————————</code>
+<code>—————————————————————————</code>
+<code>         Vless            </code>
+<code>—————————————————————————</code>
+<code>❌ Multi Login Detected ❌</code>
+<code>—————————————————————————</code>
 <code>IP     : ${MYIP}
 DOMAIN : ${domain}
 </code>
-<code>————————————————————————————————————</code>
+<code>—————————————————————————</code>
 <code>Username : ${user}</code>
 ${cum}
 
@@ -199,18 +195,16 @@ if [[ ${split} != "" ]]; then
 	     systemctl restart xray &> /dev/null
          cum=$(cat /tmp/iplimtr | grep -w "${user}" | cut -d ' ' -f 2,3)
          
-         TIME="10"
-         URL="https://api.telegram.org/bot$BOT_TOKEN/sendMessage"
          TEXT="
-<code>————————————————————————————————————</code>
-<code>               TROJAN</code>
-<code>————————————————————————————————————</code>
-<code>     ❌ Multi Login Detected ❌</code>
-<code>————————————————————————————————————</code>
+<code>—————————————————————————</code>
+<code>         TROJAN           </code>
+<code>—————————————————————————</code>
+<code>❌ Multi Login Detected ❌</code>
+<code>—————————————————————————</code>
 <code>IP     : ${MYIP}
 DOMAIN : ${domain}
 </code>
-<code>————————————————————————————————————</code>
+<code>—————————————————————————</code>
 <code>Username : ${user}</code>
 ${cum}
 
