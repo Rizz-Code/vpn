@@ -88,7 +88,7 @@ fi
 }
 
 echo -e " [INFO] System Update"
-sudo apt-get install at > /dev/null 2>&1
+sudo apt-get install at -y > /dev/null 2>&1
 sleep 2
 haproxycek
 echo -e " [INFO] Downloading Update File"
